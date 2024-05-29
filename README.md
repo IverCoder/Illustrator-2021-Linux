@@ -1,68 +1,37 @@
-# Illustrator-CC-2021-Linux
-A script that install Illustrator 2021 on Linux
+<sup>SPDX-FileCopyrightText: 2022 MiMillieuh <https://github.com/MiMillieuh>, 2024 IverCoder <https://github.com/IverCoder></sup>
 
-## Links are down, that's intended until I find a more legitimate solution for everyone.
+<sup>SPDX-License-Identifier: BSD-3-Clause</sup>
 
+# Adobe Illustrator 2021 installer
 
-## Important
-
-**DISCLAIMER :**
-**Please use this software only if you have an active Illustrator subscription. I'm not responsable of any use without subscription.**
-
-This git repo contains an installer for illustrator CC 2021.
-
-**If you use something from my repo OR my host server in your project please credit me in the first lines ! if not respected, it will be my last open-source release.**
-
-## Installation/Uninstallation
-
-
-**Installing :**
-To install just run the script with the path of your choice to install it to a custom path. if you don't specitfy it, it will use the default one to /home/yourusername/.WineApps.
-
-EX : 
-
-`sh install-illustrator-2021.sh` will install to the default folder
-
-`sh install-illustrator-2021.sh /home/username/folder/foo/` will install illustrator in /home/username/folder/foo/
-
-**Uninstalling :**
-
-To uninstall remove the Illustrator desktop file in *~/.local/share/applications/* then your installation folder
+A script that installs Illustrator 2021 (v25) on Linux via Wine. Originally developed by [@MiMillieuh](https://github.com/MiMillieuh) [here](https://github.com/LinSoftWin/Illustrator-CC-2021-Linux), modified with working links.
 
 ## Requirements
-- wine (bundeled with the installer)
-- zenity
-- appmenu-gtk-module
-- tar
-- wget
-- curl
-- All R/W rights on your home folder and the installer folder
-- Vulkan capable GPU or APU
 
+Make sure the following packages are installed:
 
-## Special thanks to
-- The WineHQ team : For making wine
-- Gictorbit : For initial inspiration
-- Adobe : For making Illustrator (also please release an official version for linux...)
+- Application Menu GTK+ Module (`appmenu-gtk3-module` on Ubuntu; `unity-gtk3-module` on Fedora; `appmenu-gtk-module` on Arch)
+- Curl (`curl` on Ubuntu, Fedora, and Arch)
+- Tar (`tar` on Ubuntu, Fedora, and Arch)
+- Wget (`wget` on Ubuntu, Fedora, and Arch)
+- Zenity (`zenity` on Ubuntu, Fedora, and Arch)
 
+You can install them through these commands:
 
+- Ubuntu: `sudo apt update && sudo apt install appmenu-gtk3-module curl tar wget zenity`
+- Fedora: `sudo dnf install unity-gtk3-module curl tar wget zenity`
+- Arch: `sudo pacman -S appmenu-gtk-module curl tar wget zenity`
 
+## Usage
 
-## Donate
+Download the installer script from the [latest release](https://github.com/IverCoder/Illustrator-2021-Linux/releases/latest), and run it via the terminal.
 
-This isn't necessary but it helps paying the hosting server
+By default, Illustrator will be installed on `~/.WineApps`. If you want to change this, simply add your desired path as an argument. For example, `install-illustrator-2021.sh ~/.local/share/Adobe/Illustrator2021/`.
 
+## Acknowledgements
 
+Special thanks to:
 
-BTC : 1LDKrdTKGHtGRjDSL2ULxGGzX4onL5YUsp
-
-ETH : 0x57bf06a94ead7b18beb237e9aec9ae3ef06fe29a
-
-BUSD : 0x57bf06a94ead7b18beb237e9aec9ae3ef06fe29a
-
-
-![Capture d’écran du 2022-08-08 17-47-06](https://user-images.githubusercontent.com/52078885/183459207-94c38d6e-25d1-4d61-b977-7a778e9fe6fc.png)
-![Capture d’écran du 2022-08-08 17-48-13](https://user-images.githubusercontent.com/52078885/183459238-73268826-ef3f-4a1c-9689-55576bab2326.png)
-![Capture d’écran du 2022-08-08 17-48-32](https://user-images.githubusercontent.com/52078885/183459250-926282ed-8060-4108-a2ea-4b33c1ae1078.png)
-![Capture d’écran du 2022-08-08 17-48-40](https://user-images.githubusercontent.com/52078885/183459264-127c945f-f0dd-4776-aefa-749e76332eaa.png)
-
+- [@Gictorbit](https://github.com/Gictorbit)'s [Illustrator CC Installer for Linux](https://github.com/Gictorbit/illustratorCClinux) for an inspiration
+- The WineHQ team for developing an outstanding emulation layer
+- Adobe for developing Ilustrator

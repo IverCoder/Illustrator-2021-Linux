@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2022 MiMillieuh <https://github.com/MiMillieuh>, 2024 IverCoder <https://github.com/IverCoder>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 instdir="$1"
 if [ $1 = $2 ]
 then
@@ -26,7 +30,7 @@ fi
 mkdir $instdir/Adobe-Illustrator-2021/
 
 
-wget https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/wine-illustrator-custom.tar.xz -O /tmp/wine-illustrator-custom.tar.xz
+wget https://web.archive.org/web/20231024185932/https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/wine-illustrator-custom.tar.xz -O /tmp/wine-illustrator-custom.tar.xz
 tar -xf /tmp/wine-illustrator-custom.tar.xz -C /tmp/
 rm -rf /tmp/wine-illustrator-custom.tar.xz
 
@@ -37,11 +41,11 @@ WINEPREFIX=$instdir/Adobe-Illustrator-2021 $instdir/Adobe-Illustrator-2021/wine-
 
 echo "Downloading Illustrator..."
 
-wget https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/AdobeIllustrator2021.tar.xz -O /tmp/AdobeIllustrator2021.tar.xz
+wget https://web.archive.org/web/20231024185550/https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/AdobeIllustrator2021.tar.xz -O /tmp/AdobeIllustrator2021.tar.xz
 tar -xf /tmp/AdobeIllustrator2021.tar.xz -C /tmp/
 rm -rf /tmp/AdobeIllustrator2021.tar.xz 
 
-wget https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/vcredist.tar.xz -O /tmp/vcredist.tar.xz
+wget https://web.archive.org/web/20231024185628/https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/vcredist.tar.xz -O /tmp/vcredist.tar.xz
 tar -xf /tmp/vcredist.tar.xz -C /tmp/
 rm -rf /tmp/vcredist.tar.xz
 
@@ -69,14 +73,14 @@ chmod +x $instdir/Adobe-Illustrator-2021/drive_c/launcher.sh
 
 rm ~/.local/share/icons/illustrator2021.png
 
-wget https://lulucloud.mywire.org/FileHosting/GithubProjects/Illustrator/illustrator2021.png -O ~/.local/share/icons/illustrator2021.png
+wget https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg -O ~/.local/share/icons/illustrator2021.svg
 
 touch ~/.local/share/applications/illustrator.desktop
 echo '[Desktop Entry]' >> ~/.local/share/applications/illustrator.desktop
-echo 'Name=Illustrator CC 2021' >> ~/.local/share/applications/illustrator.desktop
+echo 'Name=Adobe Illustrator 2021' >> ~/.local/share/applications/illustrator.desktop
 echo 'Exec=bash -c "'$instdir'/Adobe-Illustrator-2021/drive_c/launcher.sh %F"' >> ~/.local/share/applications/illustrator.desktop
 echo 'Type=Application' >> ~/.local/share/applications/illustrator.desktop
-echo 'Comment=Illustrator CC 2021 (Wine)' >> ~/.local/share/applications/illustrator.desktop
+echo 'Comment=Illustrator 2021 (Wine)' >> ~/.local/share/applications/illustrator.desktop
 echo 'Categories=Graphics;' >> ~/.local/share/applications/illustrator.desktop
 echo 'Icon=illustrator2021' >> ~/.local/share/applications/illustrator.desktop
 echo 'StartupWMClass=illustrator.exe' >> ~/.local/share/applications/illustrator.desktop
